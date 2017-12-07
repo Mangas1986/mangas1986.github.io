@@ -1,0 +1,74 @@
+@import "skin.less";
+
+.button-find {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    .container();
+    .button-find-wrapper {
+        margin-top: -160px;
+        h2 {
+            .semibold;
+            margin: 0;
+            font-size: 15px;
+            color: @white-lighter;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            padding-bottom: 21px;
+        }
+        a {
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            width: 61px;
+            height: 71px;
+            .vendor(clip-path, polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%));
+            background-color: @brand-color;
+            border-radius: 0;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 3px;
+                right: 3px;
+                top: 3px;
+                bottom: 3px;
+                z-index: 1;
+                background-color: @accent-1-color;
+                .vendor(clip-path, polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%));
+                .linear();
+            }
+            span {
+                display: block;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 54%;
+                    left: 61%;
+                    .vendor(transform, translate(-50%, -50%) rotate(50deg));
+                    z-index: 1;
+                    height: 22px;
+                    width: 5px;
+                    background-color: @brand-color;
+                    border-radius: 10px;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 54%;
+                    left: 39%;
+                    .vendor(transform, translate(-50%, -50%) rotate(-50deg));
+                    z-index: 1;
+                    height: 22px;
+                    width: 5px;
+                    background-color: @brand-color;
+                    border-radius: 10px;
+                }
+            }
+            &:hover {
+                &:before {
+                    background-color: @white-lighter;
+                }
+            }
+        }
+    }
+}

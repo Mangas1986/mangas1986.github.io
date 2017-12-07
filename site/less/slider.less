@@ -1,0 +1,160 @@
+@import "skin.less";
+
+.slider {
+    margin-top: -142px;
+    position: relative;
+    background-image: url(../images/slider-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    
+    @media (max-width: 800px) {
+        margin: 0;
+    }
+    @media (max-width: 700px) {
+        display: none;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        background-color: @white-lighter;
+        .vendor(clip-path, polygon(0 0, 0 100%, 100% 100%));
+        width: 50%;
+        height: 300px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        right: 0;
+        background-color: @white-lighter;
+        .vendor(clip-path, polygon(100% 0, 0 100%, 100% 100%));
+        width: 50%;
+        height: 300px;
+    }
+  .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-wrapper {
+        .swiper-slide {
+            .swiper-slide-wrapper {
+                position: relative;
+                height: 100vh;
+                .container();   
+                .swiper-slide-left-part {
+                    width: 50%;
+                    position: absolute;
+                    text-align: left;
+                    left: 84px;
+                    top: 50%;
+                    .vendor(transform, translate(0, -50%));
+                    h1 {
+                        .bold;
+                        font-size: 55px;
+                        color: @white-lighter;
+                        text-transform: capitalize;
+                        line-height: 1.2;
+                        padding-bottom: 5px;
+                        
+                        @media (max-width: 1120px) {
+                            line-height: 1;
+                        }
+                        @media (max-width: 800px) {
+                            font-size: 45px;
+                        }
+                    }
+                    h4 {
+                        .regular;
+                        font-size: 16px;
+                        color: @white-lighter;
+                        line-height: 1.9;
+                        padding: 0 100px 45px 5px;
+                        
+                         @media (max-width: 800px) {
+                            font-size: 14px;
+                        }
+                    }
+                    a {
+                        .semibold;
+                        .linear();
+                        margin-left: 5px;
+                        display: inline-block;
+                        border-radius: 4px;
+                        line-height: 55px;
+                        padding: 0 42.5px;
+                        background-color: @brand-color;
+                        font-size: 14px;
+                        color: @white-lighter;
+                        text-transform: uppercase;
+                        &:hover {
+                            background-color: darken(@brand-color, 10%);
+                            text-decoration: none;
+                        }
+                    }
+                }
+                .swiper-slide-right-part {
+                    position: absolute;
+                    top: 50%;
+                    right: 145px;
+                    .vendor(transform, translate(0, -50%));
+                    img {
+                        display: block;
+                        max-height: 100%;
+                        max-width: 100%;
+                        
+                        @media (max-width: 800px) {
+                            max-height: 70%;
+                            max-width: 70%;
+                        }
+                    }
+                }
+            }
+        }        
+    }
+    .swiper-container-vertical>.swiper-pagination-bullets {
+        right: 54px;
+    }
+    .swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+        position: relative;
+        margin: 16px auto;
+        width: 15px;
+        height: 17px;
+        .vendor(clip-path, polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%));
+        background-color: @white-lighter;
+        border-radius: 0;
+        opacity: 1;
+        .linear();
+        &:before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            bottom: 2px;
+            z-index: 1;
+            background-color: @accent-1-color;
+            .vendor(clip-path, polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%));
+        }
+        &.swiper-pagination-bullet-active {
+            margin: 18.5px auto;
+            width: 19px;
+            height: 22px;
+            .vendor(clip-path, polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%));
+            background-color: @brand-color;
+            border-radius: 0;
+            opacity: 1;
+            .linear();
+            &:before {
+                display: none;
+            }
+        }
+    }
+}

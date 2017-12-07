@@ -1,0 +1,65 @@
+@import "skin.less";
+
+.call-to-action {
+    position: relative;
+    background-image: url(../images/cta-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 81.5px 0;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: fade(@accent-1-color, 80%);     
+    }
+    .call-to-action-wrapper {
+        .vendor(display, flex);
+        .vendor(flex-direction, row);
+        .vendor(flex-wrap, wrap);
+        .vendor(justify-content, space-between);
+        .vendor(align-items, center);
+        .vendor(align-content, center);
+        position: relative;
+        z-index: 2;
+        .container();
+        .call-to-action-left-part {
+            h2 {
+                margin: 0;
+                .bold;
+                font-size: 40px;
+                line-height: 1.2;
+                color: @white-lighter;
+                
+                @media (max-width: 616px) {
+                    padding-bottom: 20px;
+                    line-height: 1;
+                }
+            }
+            
+        }
+        .call-to-action-right-part {
+            a {
+                .semibold;
+                .linear();
+                margin-left: 2px;
+                display: inline-block;
+                border-radius: 4px;
+                line-height: 55px;
+                padding: 0 43.5px;
+                background-color: @brand-color;
+                font-size: 14px;
+                color: @white-lighter;
+                text-transform: uppercase;
+                &:hover {
+                    background-color: darken(@brand-color, 10%);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

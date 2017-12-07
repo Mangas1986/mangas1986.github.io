@@ -1,0 +1,29 @@
+@import "skin.less";
+
+.linear() {
+    -webkit-transition: all 0.3s linear 0s;
+     -moz-transition: all 0.3s linear 0s;
+     -o-transition: all 0.3s linear 0s;
+     transition: all 0.3s linear 0s;
+}
+
+.container() {
+    @media (min-width: 1199px) {
+        padding: 0 20px;
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+    @media (max-width: 1199px) {
+        padding: 0 20px;
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+}
+
+.clearboth {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

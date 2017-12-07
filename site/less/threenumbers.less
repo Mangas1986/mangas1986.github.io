@@ -1,0 +1,50 @@
+@import "skin.less";
+
+.threenumbers {
+     @media (min-width: 1199px) {
+        max-width: 1160px;
+        margin: 0 auto;
+    }
+    padding: 187px 0 129px;
+    text-align: center;
+    .threenumbers-wrapper {
+        display: table;
+        width: 100%;
+        padding: 0 110px;
+        
+        @media (max-width: 691px) {
+            padding: 0 20px;
+        }
+        .threenumbers-item {
+            display: table-cell;
+            vertical-align: top;
+            width: 33.3333333333%;
+            
+            @media (max-width: 991px) {
+                width: 100%;
+                display: block;
+                padding-bottom: 40px;
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+            h1 {
+                .bold;
+                font-size: 60px;
+                color: @accent-1-color;
+                line-height: 1;
+                padding-bottom: 15px;
+            }
+            h3 {
+                .bold;
+                font-size: 15px;
+                color: @accent-1-color;
+                text-transform: uppercase;
+                line-height: 1.35;
+                word-spacing: 1px;
+                margin: 0;
+                padding: 0 30px;
+            }
+        }
+    }
+}
